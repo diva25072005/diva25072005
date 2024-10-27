@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello, World!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      width: 130%;
+      height: 900px;
+      margin-left: 20px;
+    }
+    section nav {
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #3BBA9C;
+      box-shadow: 0 0 10px;
+    }
+    section nav .logo img {
+      width: 130px;
+      height: 60px;
+      position:relative;
+      left:-40px;
+      cursor: pointer;
+      border-radius: 1000px;
+    }
+    section nav .main_coll {
+      font-size: 20px;
+      width: 390px;
+      position: relative;
+      top: -15px;
+      left:-75px;
+    }
+    section nav .main_name {
+      font-size: 20px;
+      width: 270px;
+      position: relative;
+      left: 140px;
+    }
+
+  
+    .menu-icon {
+      font-size: 35px;
+      color: black;
+      cursor: pointer;
+      padding-left: 10px;
+    }
+
+    
+    .menu {
+      display: none; 
+      flex-direction: column;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 150px;
+      background-color: #3BBA9C;
+      transition: width 0.5s ease; 
+    }
+    
+    .menu.active {
+      display: flex; 
+    }
+
+    .menu-item {
+      height: 60px;
+      width: 100%; 
+      background-color: #fff;
+      border: 1px solid #3BBA9C;
+      color: #3BBA9C;
+      text-align: center;
+      line-height: 60px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      padding: 0;
+    }
+    .menu-item:hover {
+      background-color: #3BBA9C;
+      color: white;
+    }
+
+    .main_table {
+      width: 950px;
+      margin-top: 100px;
+    }
+    .main_table td {
+      padding: 10px;
+    }
+    .main_sel, .main_in, .main_text, .main_but, .main_the {
+      border: 2px solid black;
+      background-color: white;
+      padding: 5px;
+      font-size: 15px;
+      border-radius: 5px;
+    }
+    textarea {
+      background-color: #282828;
+      color: white;
+      width: 150%;
+      height: 500px;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 15px;
+      border-radius: 10px;
+      display: block;
+    }
+    .compile, .Execute {
+      width: 130px;
+      height: 40px;
+      font-size: 20px;
+      background-color: #3BBA9C;
+      border-radius: 5px;
+      border: 2px solid #3BBA9C;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<section>
+  <nav>
+   
+    <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+    
+    
+    <div class="logo">
+      <img src="/storage/emulated/0/Download/download.png" alt="Logo">
+    </div>
+
+    <div class="main_coll">
+      <p><br>Programming Skill Development System</p>
+    </div>
+    <div class="main_name">
+      <p>Divakar M<br></p>
+    </div>
+  </nav>
+
+  
+  <div class="menu" id="sideMenu">
+    <div class="menu-item">Login</div>
+    <div class="menu-item">Exam</div>
+    <div class="menu-item">Practice Area</div>
+    <div class="menu-item">logout</div>
+ 
+  </div>
+
+  <table class="main_table">
+    <tr>
+      <td><p class="main_lan">Source Language</p></td>
+      <td>
+        <select class="main_sel" id="language">
+          <option>C</option>
+          <option>C++</option>
+          <option>JAVA</option>
+          <option>HTML</option>
+          <option>PYTHON</option>
+          <option>PHP</option>
+          <option>PERL</option>
+          <option>JS</option>
+          <option>SQL</option>
+          <option>SHELL</option>
+          <option>C#</option>
+        </select>
+      </td>
+      <td><input class="main_in" id="file_extension" type="text" placeholder=".c"></td>
+      <td><p class="main_file">File Name</p></td>
+      <td><input class="main_text" id="file_name" type="text"></td>
+      <td><button class="main_but" onclick="saveFile()">Save</button></td>
+      <td><p class="main_theme">Theme</p></td>
+      <td>
+        <select class="main_the">
+          <option>eclipse</option>
+          <option>terminal</option>
+          <option>ambiance</option>
+          <option>iplasatic</option>
+          <option>twilight</option>
+          <option>vibrant_link</option>
+          <option>textmate</option>
+          <option>xcode</option>
+          <option>idle_fingers</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+
+  <textarea id="code_editor" placeholder="Write your code here..."></textarea>
+
+  <button class="compile" onclick="compileCode()">Compile</button>
+  <button class="Execute" onclick="executeCode()">Execute</button>
+</section>
+
+<script>
+
+function toggleMenu() {
+  var menu = document.getElementById("sideMenu");
+  menu.classList.toggle("active"); 
+}
+
+
+function saveFile() {
+  let fileName = document.getElementById('file_name').value;
+  let fileExtension = document.getElementById('file_extension').value;
+  let code = document.getElementById('code_editor').value;
+
+  if (!fileName || !fileExtension) {
+    alert('Please provide a valid file name and extension.');
+    return;
+  }
+
+  let fullFileName = fileName + fileExtension;
+  console.log("File saved: " + fullFileName);
+  console.log("Code: \n" + code);
+
+  alert("File saved as: " + fullFileName);
+}
+
+
+function compileCode() {
+  let code = document.getElementById('code_editor').value;
+  
+  if (!code.trim()) {
+    alert("No code to compile!");
+    return;
+  }
+
+  
+  console.log("Compiling...");
+  alert("Compilation successful!");
+}
+
+
+function executeCode() {
+  let code = document.getElementById('code_editor').value;
+
+  if (!code.trim()) {
+    alert("No code to execute!");
+    return;
+  }
+
+  
+  console.log("Executing code...");
+  alert("Execution complete!");
+}
+</script>
+
+</body>
+</html>
