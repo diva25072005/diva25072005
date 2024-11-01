@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kilograms to Pounds Converter</title>
+  <style>
+    body {
+      background-color:gray; 
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #main {
+      width: 50%;
+      height: 250px;
+      padding: 20px;
+      border: 2px solid white;
+      background-color: white;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    #maininput {
+      width: 80%;
+      height: 30px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding: 5px;
+    }
+    #mainbutt {
+      width: 100px;
+      height: 35px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: black;
+      cursor: pointer;
+    }
+    #mainbutt:hover {
+      background-color: grey;
+    }
+    #pounds {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <h1><i>Kilograms to Pounds</i></h1>
+    <input type="number" id="maininput" placeholder="Enter kilograms">
+    <br>
+    <button id="mainbutt" onclick="convertToPounds()">Submit</button>
+    <div id="pounds"></div>
+  </div>
+
+  <script>
+    function convertToPounds() {
+      let input = document.getElementById("maininput").value;
+      let pounds = input * 2.20462;
+      document.getElementById("pounds").innerHTML = "Pounds: <strong>" + pounds.toFixed(2) + "</strong>";
+    }
+  </script>
+</body>
+</html>
