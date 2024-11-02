@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>students profile </title>
+    <style>
+        .myinp {
+            justify-content: center;
+            align-items: center;
+            margin: 1px;
+            background-color: #f0f0f0;
+            color: #333;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .butt {
+            justify-content: center;
+            align-items: center;
+            margin: 1px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .butt:hover {
+            background-color: #e68900;
+        }
+
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNDsoO8vsuwyXSKK1tUL7JUZWm2qjeZNUy9g&s');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        h1 {
+            align-items: center;
+            justify-content: center;
+            margin-top: 90px;
+            color: white;
+        }
+
+        h1.activ {
+            color: black;
+        }
+
+        #customAlert {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #customAlertContent {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            width: 80%;
+            text-align: justify;
+        }
+
+        #customAlert img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        #closeBtn {
+            margin-top: 10px;
+            padding: 8px 70px;
+            background-color: #e68900;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="spe">student profile</h1>
+    <input type="text" class="myinp" id="myInput" placeholder="Enter text">
+    <button class="butt" onclick="getValue()">Get Value</button>
+
+    <div id="customAlert">
+        <div id="customAlertContent">
+            <p id="customAlertText"></p>
+            <img id="customAlertImage" src="" alt="Special Image">
+            <button id="closeBtn" onclick="closeAlert()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function getValue() {
+            let spe = document.getElementById("spe");
+            spe.classList.toggle("activ");
+
+            let inputField = document.getElementById("myInput");
+            let value = inputField.value;
+
+            if (value === "Dharshini") {
+                document.getElementById("customAlertText").innerHTML =
+                    "Education: Pursuing Electronics and Communication Engineering at K.S. Rangasamy College of Technology." +
+                    "Career Aspirations:" +
+                    "Web Development: Aiming to become a skilled web developer with a focus on designing and building responsive, efficient, and user-friendly websites." +
+                    "Embedded C: Intending to master Embedded C programming to work on embedded systems and develop efficient software solutions for hardware-based applications." +
+                    "Skill Development: Emphasis on hands-on projects and real-world applications in both web development and embedded systems.";
+                document.getElementById("customAlertImage").src = "content://media/external/downloads/1000024370";
+                document.getElementById("customAlert").style.display = "flex";
+     } else if (value === "Diwakar") {
+                document.getElementById("customAlertText").innerHTML =
+                    "Education: Pursuing Electronics and Communication Engineering at K.S. Rangasamy College of Technology." +
+                    "Career Aspirations:" +
+                    "Web Development: Aiming to become a skilled web developer with a focus on designing and building responsive, efficient, and user-friendly websites." +
+                    "Embedded C: Intending to master Embedded C programming to work on embedded systems and develop efficient software solutions for hardware-based applications." +
+                    "Skill Development: Emphasis on hands-on projects and real-world applications in both web development and embedded systems.";
+                 document.getElementById("customAlertImage").src = "content://media/external/downloads/1000024369";
+                document.getElementById("customAlert").style.display = "flex";
+            } else if (value === "Dharanesh") {
+                document.getElementById("customAlertText").innerHTML =
+                    "Education: Pursuing Electronics and Communication Engineering at K.S. Rangasamy College of Technology." +
+                    "Career Aspirations:" +
+                    "Web Development: Aiming to become a skilled web developer with a focus on designing and building responsive, efficient, and user-friendly websites." +
+                    "Embedded C: Intending to master Embedded C programming to work on embedded systems and develop efficient software solutions for hardware-based applications." +
+                    "Skill Development: Emphasis on hands-on projects and real-world applications in both web development and embedded systems.";
+                document.getElementById("customAlertImage").src = "content://media/external/downloads/1000024364";
+                document.getElementById("customAlert").style.display = "flex";
+            } else if (value === "Hardeep") {
+                document.getElementById("customAlertText").innerHTML =
+                    "Student: Electronics and Communication Engineering (ECE) at K.S. Rangasamy College of Technology" +
+                    "Primary Goals: Video Editing: Aspiring to become a professional video editor with expertise in creating engaging and high-quality content." +
+                    "Embedded C: Working to gain strong proficiency in Embedded C for developing efficient embedded systems." +
+                    "Focus Areas: Master video editing software and techniques to produce creative and compelling visuals." +
+                    "Develop a solid foundation in Embedded C programming for applications in embedded technology.";
+                document.getElementById("customAlertImage").src = "content://media/external/downloads/1000024360";
+                document.getElementById("customAlert").style.display = "flex";
+            } else if (value === "Davit") {
+                document.getElementById("customAlertText").innerHTML =
+                    "Student: Electronics and Communication Engineering (ECE) at K.S. Rangasamy College of Technology" +
+                    "Primary Goals: Web Development: Aspiring to become a skilled web developer, focusing on full-stack or front-end/back-end technologies." +
+                    "Embedded C: Aiming to gain strong proficiency in Embedded C for designing and developing embedded systems." +
+                    "Focus Areas: Enhance programming skills relevant to web development frameworks and embedded systems." +
+                    "Work on projects that integrate both web technologies and embedded software.";
+                document.getElementById("customAlertImage").src = "content://media/external/downloads/1000024362";
+                document.getElementById("customAlert").style.display = "flex";
+            } else {
+                alert("Name not found");
+            }
+        }
+
+        function closeAlert() {
+            document.getElementById("customAlert").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
