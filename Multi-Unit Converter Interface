@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>all in one</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+  *{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+  }
+ #mainmenu{
+   width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color:#556B2F;
+      box-shadow: 0 0 10px; 
+ }
+  #menubox{
+    margin-left:30px;
+    font-size:35px;
+    cursor:pointer;
+    
+  }
+ .menu{
+   width:100px;
+   display:none;
+   flex-direction:column;
+   position:fixed;
+   top:80px;
+   left:0px;
+   transition:width 0.5s ease;
+   
+ }
+ .menu.active{
+   display:flex;
+   
+ }
+  .menu-item {
+      height: 60px;
+      width: 200%; 
+      background-color: white;
+      border: 1px solid #556B2F;
+      color: #000000;
+      text-align: center;
+      line-height: 60px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      padding: 0;
+    }
+ .menu-item:hover{
+   background-color:#556B2F;
+   color:white;
+ }
+    body {
+      background-color:gray; 
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #main {
+      display:none;
+      width: 50%;
+      height: 250px;
+      padding: 20px;
+      border: 2px solid white;
+      background-color: white;
+      text-align: center;
+      box-sizing: border-box;
+    }
+  #main.active1{
+    display:block;
+  }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    #maininput {
+      width: 80%;
+      height: 30px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding: 5px;
+    }
+    #mainbutt {
+      width: 100px;
+      height: 35px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: black;
+      cursor: pointer;
+    }
+    #mainbutt:hover {
+      background-color: grey;
+    }
+    #pounds {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  #main2{
+      display:none;
+      width: 50%;
+      height: 250px;
+      padding: 20px;
+      border: 2px solid white;
+      background-color: white;
+      text-align: center;
+      box-sizing: border-box;
+    }
+  #main2.active2{
+    display:block;
+  }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    #maininput2 {
+      width: 80%;
+      height: 30px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding: 5px;
+    }
+    #mainbutt2 {
+      width: 100px;
+      height: 35px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: black;
+      cursor: pointer;
+    }
+    #mainbutt2:hover {
+      background-color: grey;
+    }
+    #celcius{
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  #main3{
+      display:none;
+      width: 50%;
+      height: 250px;
+      padding: 20px;
+      border: 2px solid white;
+      background-color: white;
+      text-align: center;
+      box-sizing: border-box;
+    }
+  #main3.active3{
+    display:block;
+  }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    #maininput3{
+      width: 80%;
+      height: 30px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding: 5px;
+    }
+    #mainbutt3{
+      width: 100px;
+      height: 35px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: black;
+      cursor: pointer;
+    }
+    #mainbutt3:hover {
+      background-color: grey;
+    }
+    #meter{
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  #main4{
+      display:none;
+      width: 50%;
+      height: 250px;
+      padding: 20px;
+      border: 2px solid white;
+      background-color: white;
+      text-align: center;
+      box-sizing: border-box;
+    }
+  #main4.active4{
+    display:block;
+  }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    #maininput4 {
+      width: 80%;
+      height: 30px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding: 5px;
+    }
+    #mainbutt4{
+      width: 100px;
+      height: 35px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: black;
+      cursor: pointer;
+    }
+    #mainbutt4:hover {
+      background-color: grey;
+    }
+    #kph{
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div id="mainmenu">
+    <i id="menubox" class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+  </div>
+  <div class="menu" id="sideMenu">
+    <div class="menu-item" onclick="item1()">kilograms to pounds</div>
+    <div class="menu-item" onclick="item2()">Fahrenheit to Celcius</div>
+    <div class="menu-item" onclick="item3()">Feet to Meter</div>
+    <div class="menu-item" onclick="item4()">MPH to KPH</div>
+ 
+  </div>
+  <div id="main">
+    <h1><i>Kilograms to Pounds</i></h1>
+    <input type="number" id="maininput" placeholder="Enter kilograms">
+    <br>
+    <button id="mainbutt" onclick="convertToPounds()">Submit</button>
+    <div id="pounds"></div>
+  </div>
+  <div id="main2">
+    <h1><i>Fahrenheit to Celcius</i></h1>
+    <input type="number" id="maininput2" placeholder="Enter Fahrenheit">
+    <br>
+    <button id="mainbutt2" onclick="FahrenheittoCelcius()">Submit</button>
+    <div id="celcius"></div>
+  </div>
+  <div id="main3">
+    <h1><i>Feet to Meter</i></h1>
+    <input type="number" id="maininput3" placeholder="Enter Feet">
+    <br>
+    <button id="mainbutt3" onclick="FeettoMeter()">Submit</button>
+    <div id="meter"></div>
+  </div>
+  <div id="main4">
+    <h1><i>MPH to KPH</i></h1>
+    <input type="number" id="maininput4" placeholder="Enter MPH">
+    <br>
+    <button id="mainbutt4" onclick="MPHtoKPH()">Submit</button>
+    <div id="kph"></div>
+  </div>
+  
+  
+  
+  
+
+  <script>
+  
+  function toggleMenu(){
+    let menu=document.getElementById("sideMenu");
+    menu.classList.toggle("active");
+  }
+    function convertToPounds() {
+      let input = document.getElementById("maininput").value;
+      let pounds = input * 2.20462;
+      document.getElementById("pounds").innerHTML = "Pounds: <strong>" + pounds.toFixed(2) + "</strong>";
+    }
+  function item1(){
+    let menu=document.getElementById("main");
+    menu.classList.toggle("active1");
+  }
+  
+  function FahrenheittoCelcius() {
+      let input = document.getElementById("maininput2").value;
+      let celcius= (input-32)/1.8;
+      document.getElementById("celcius").innerHTML = "celcius: <strong>" +celcius.toFixed(2) + "</strong>";
+    }
+  function item2(){
+    let menu=document.getElementById("main2");
+    menu.classList.toggle("active2");
+  }
+  
+  function FeettoMeter() {
+      let input = document.getElementById("maininput3").value;
+      let meter= input/3.2808;
+      document.getElementById("meter").innerHTML = "meter: <strong>" +meter.toFixed(2) + "</strong>";
+    }
+  function item3(){
+    let menu=document.getElementById("main3");
+    menu.classList.toggle("active3");
+  }
+  
+  function MPHtoKPH() {
+      let input = document.getElementById("maininput4").value;
+      let kph= input * 1.609344;
+      document.getElementById("kph").innerHTML ="kph: <strong>" +kph.toFixed(2) + "</strong>";
+    }
+  function item4(){
+    let menu=document.getElementById("main4");
+    menu.classList.toggle("active4");
+  }
+  
+  </script>
+</body>
+</html>
